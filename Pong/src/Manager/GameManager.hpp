@@ -9,7 +9,6 @@
 #include "Rendering/Entities/Entity.hpp"
 #include "Rendering/Entities/Player.hpp"
 #include "Rendering/Entities/Ball.hpp"
-#include "Utils/Utils.hpp"
 
 namespace Pong
 {
