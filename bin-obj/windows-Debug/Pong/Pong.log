@@ -1,0 +1,4 @@
+﻿  GameManager.cpp
+c:\users\kirk\desktop\r9s\personalprojects\c++\pong\pong\src\manager\gamemanager.cpp(47): warning C4244: '=': conversion from 'double' to 'GLfloat', possible loss of data
+LINK : warning LNK4098: defaultlib 'LIBCMT' conflicts with use of other libs; use /NODEFAULTLIB:library
+  Pong.vcxproj -> C:\Users\Kirk\Desktop\R9S\PersonalProjects\C++\Pong\Pong\..\bin\windows-Debug\Pong\Pong.exe
