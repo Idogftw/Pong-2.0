@@ -23,8 +23,8 @@ namespace Pong
 	class Player : public IEntity
 	{
 	public:
-		Player(glm::mat4 _projection, bool _ai);
-		Player(Rectangle _rect, glm::mat4 _projection, bool _ai);
+		Player(glm::mat4 _projection, PlayerNum _playerType);
+		Player(Rectangle _rect, glm::mat4 _projection, PlayerNum _playerType);
 		~Player();
 
 		void Create();
@@ -32,6 +32,8 @@ namespace Pong
 		void Draw();
 	public:
 		Rectangle getRect() { return m_rect; }
+		int getScore() { return m_score; }
+		void setScore(int _score) { m_score = m_score + _score; }
 	private:
 		Rectangle m_rect;
 		GLuint m_vao;
@@ -39,7 +41,8 @@ namespace Pong
 		GLuint m_ebo;
 		Shader* m_shader;
 		glm::mat4 m_projection;
-		bool m_ai;
+		PlayerNum m_playerType;
+		int m_score;
 	};
 }
 

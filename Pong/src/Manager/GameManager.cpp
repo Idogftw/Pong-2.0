@@ -16,8 +16,8 @@ namespace Pong
 
 		m_window = new Window(m_width, m_height);
 
-		m_player1 = new Player(Rectangle(glm::vec2(10, (m_height / 2) - 25), glm::vec2(15, 100), glm::vec3(1, 1, 1)), m_projection, false);
-		m_player2 = new Player(Rectangle(glm::vec2(m_width - 25, (m_height / 2) - 25), glm::vec2(15, 100), glm::vec3(1, 0, 1)), m_projection, true);
+		m_player1 = new Player(Rectangle(glm::vec2(10, (m_height / 2) - 25), glm::vec2(15, 100), glm::vec3(1, 1, 1)), m_projection, PlayerNum::PLAYER1);
+		m_player2 = new Player(Rectangle(glm::vec2(m_width - 25, (m_height / 2) - 25), glm::vec2(15, 100), glm::vec3(1, 1, 1)), m_projection, PlayerNum::PLAYER2);
 
 		m_ball = new Ball(Rectangle(glm::vec2(m_width / 2, (m_height / 2)), glm::vec2(25, 25), glm::vec3(1, 1, 1)), m_projection);
 
@@ -49,7 +49,7 @@ namespace Pong
 			m_lastFrame = m_currentFrame;
 
 			//Clear the screen
-			m_window->Clear();
+			m_window->Clear(0.f, 0.f, 0.f);
 
 			//Rendering
 			//Draw the entities

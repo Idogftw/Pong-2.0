@@ -67,17 +67,12 @@ namespace Pong
 			if (key == GLFW_KEY_ESCAPE)
 				glfwSetWindowShouldClose(window, true);
 		});
-
-		glfwSetMouseButtonCallback(m_window, [](GLFWwindow* window, int button, int action, int mods)
-		{
-			//m_Input.
-		});
 	}
 
 	void Window::Clear(float r, float g, float b, float a)
 	{
 		glClear(GL_COLOR_BUFFER_BIT);
-		glClearColor(0.5, 0.3, 0.1, 1.0);
+		glClearColor(r, g, b, a);
 	}
 
 	void Window::Swap()

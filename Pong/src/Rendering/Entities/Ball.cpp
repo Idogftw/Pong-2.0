@@ -63,15 +63,16 @@ namespace Pong
 		//Left player gains point
 		else if (this->getRect().getPos().x >= player2->getRect().getPos().x + player2->getRect().getSize().x)
 		{
-			std::cout << "player 1 point";
+			player1->setScore(1);
 			m_rect.setPos(glm::vec2(_width / 2, _height / 2) + (-velocity * _delta));
-
+			std::cout << "P1: " << player1->getScore() << " | " << "P2: " << player2->getScore() << std::endl;
 		}
 		//Right player gains point
 		else if (this->getRect().getPos().x <= player1->getRect().getPos().x - player1->getRect().getSize().x)
 		{
-			std::cout << "player 2 point";
+			player2->setScore(1);
 			m_rect.setPos(glm::vec2(_width / 2, _height / 2) + (-velocity * _delta));
+			std::cout << "P1: " << player1->getScore() << " | " << "P2: " << player2->getScore() << std::endl;
 		}
 
 		//If the ball hits the top change its y velocity, same if it hits the bottom of the screen

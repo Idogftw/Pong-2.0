@@ -89,7 +89,6 @@
     <ClCompile Include="src\Rendering\Entities\Entity.cpp" />
     <ClCompile Include="src\Rendering\Entities\Player.cpp" />
     <ClCompile Include="src\Rendering\Entities\Rectangle.cpp" />
-    <ClCompile Include="src\Rendering\MenuTest\Button.cpp" />
     <ClCompile Include="src\Rendering\Window\Window.cpp" />
   </ItemGroup>
   <ItemGroup>
@@ -108,7 +107,6 @@
     <ClInclude Include="src\Rendering\Entities\IEntity.hpp" />
     <ClInclude Include="src\Rendering\Entities\Player.hpp" />
     <ClInclude Include="src\Rendering\Entities\Rectangle.hpp" />
-    <ClInclude Include="src\Rendering\MenuTest\Button.hpp" />
     <ClInclude Include="src\Rendering\Shader\Shader.hpp" />
     <ClInclude Include="src\Rendering\Window\Window.hpp" />
   </ItemGroup>

@@ -2,13 +2,13 @@
 
 namespace Pong
 {
-	Player::Player(glm::mat4 _projection, bool _ai)
-		: m_rect(Rectangle(glm::vec2(0, 0), glm::vec2(15, 100), glm::vec3(1, 1, 1))), m_projection(_projection), m_ai(_ai)
+	Player::Player(glm::mat4 _projection, PlayerNum _playerType)
+		: m_rect(Rectangle(glm::vec2(0, 0), glm::vec2(15, 100), glm::vec3(1, 1, 1))), m_projection(_projection), m_playerType(_playerType), m_score(0)
 	{
 	}
 
-	Player::Player(Rectangle _rect, glm::mat4 _projection, bool _ai)
-		: m_rect(_rect), m_projection(_projection), m_ai(_ai)
+	Player::Player(Rectangle _rect, glm::mat4 _projection, PlayerNum _playerType)
+		: m_rect(_rect), m_projection(_projection), m_playerType(_playerType), m_score(0)
 	{
 	}
 
@@ -47,6 +47,8 @@ namespace Pong
 
 	void Player::Update(float _delta, int _width, int _height)
 	{
+		if (m_playerType == PLAYER1)
+		{
 			if (InputManager::Instance()->keyPressed(GLFW_KEY_W))
 			{
 				if (m_rect.getPos().y >= _height - m_rect.getSize().y)
@@ -62,6 +64,26 @@ namespace Pong
 
 				m_rect.setPos(m_rect.getPos() + glm::vec2(0, -8));
 			}
+		}
+		else
+		{
+			if (InputManager::Instance()->keyPressed(GLFW_KEY_UP))
+			{
+				if (m_rect.getPos().y >= _height - m_rect.getSize().y)
+					m_rect.setPos(glm::vec2(m_rect.getPos().x, _height - m_rect.getSize().y));
+
+				m_rect.setPos(m_rect.getPos() + glm::vec2(0, 8));
+			}
+
+			if (InputManager::Instance()->keyPressed(GLFW_KEY_DOWN))
+			{
+				if (m_rect.getPos().y <= 0)
+					m_rect.setPos(glm::vec2(m_rect.getPos().x, 0));
+
+				m_rect.setPos(m_rect.getPos() + glm::vec2(0, -8));
+			}
+		}
+			
 	}
 
 	void Player::Draw()
